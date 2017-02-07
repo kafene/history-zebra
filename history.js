@@ -17,7 +17,7 @@ const getUrlDomain = (url) => {
 const clearHistory = () => {
     let whitelistRegex;
 
-    browser.storage.local.get({ whitelist: "" }).then(({ whitelist }) => {
+    browser.storage.local.get({ whitelist: [] }).then(({ whitelist }) => {
         // one big regex to match any whitelisted domain, or subdomain of that domain.
         whitelistRegex = new RegExp("(^|\\.)(" + whitelist.map(regexEscape).join("|") + ")$", "i");
 
