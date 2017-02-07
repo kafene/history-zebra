@@ -4,6 +4,11 @@
   "version": "0.0.1",
   "description": "Provides a browser action to delete history, with a whitelist.",
   "homepage_url": "https://github.com/kafene/history-whitelist-webextension",
+  "applications": {
+    "gecko": {
+      "id": "history-whitelist@kafene.org"
+    }
+  },
   "browser_action": {
     "browser_style": true,
     "default_icon": {
