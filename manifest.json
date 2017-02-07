@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "History Whitelist",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Provides a browser action to delete history, with a whitelist.",
   "homepage_url": "https://github.com/kafene/history-whitelist-webextension",
   "applications": {
