@@ -3,31 +3,29 @@
 <head>
 <meta charset="utf-8">
 <style>
-  html, body {
-      width: auto;
-      min-width: 250px;
-      max-width: 500px;
-      background-color: #f8f8f8;
-  }
-  body {
-    margin: 0.5em;
-  }
-  p {
-      padding: 0.5em;
-      margin: 0.5em;
-      border: 1px solid #ccc;
-      border-radius: 0.5em;
-  }
-  #clear {
-      text-decoration: none;
-      padding: 0.5em;
-      margin: 0.5em;
-  }
+    html, body {
+        width: auto;
+        min-width: 250px;
+        max-width: 500px;
+        background-color: #f8f8f8;
+    }
+    body {
+        padding: 1em;
+    }
+    button {
+        padding: 0.5em;
+    }
+    #buttons {
+        display: flex;
+        justify-content: space-between;
+    }
 </style>
 </head>
 <body>
-    <p><button id="clear">Clear history</button></p>
-    <p><button id="options">Edit whitelist</button></p>
+    <div id="buttons">
+        <button id="clear">Clear history</button>
+        <button id="options">Edit whitelist</button>
+    </div>
     <script src="history.js"></script>
 </body>
 </html>
