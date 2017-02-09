@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    font: message-box;
+    font-size: 15px;
+    color: #333;
+    line-height: 20px;
+}
+code {
+    line-height: 1rem;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 2px 4px;
+    background-color: #f7f7f9;
+    border-radius: 3px;
+    color: #b02;
+}
+input[type=text] {
+    margin: 2px 0;
+    padding: 2px 4px;
+    line-height: 20px;
+    min-height: 30px;
+    background-color: #fff;
+    border: 1px solid #c1c1c1;
+    font-size: 15px;
+}
+select {
+    -moz-appearance: none;
+    background: #fbfbfb url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAAB3RSTlMAvL6/wMHC5K4CPAAAAB9JREFUeAFjoB9gYQcDZjQRZmQ1rOzsTKi62BgZ6AkAQUMAcSstUuMAAAAASUVORK5CYII=) no-repeat 96% center;
+    padding: 6px 4px;
+}
+button, select {
+    margin: 2px 4px;
+    line-height: 20px;
+    min-height: 30px;
+    min-width: 94.5px;
+    background-color: #fbfbfb;
+    border: 1px solid #c1c1c1;
+}
+button:hover, select:hover {
+    background-color: #ebebeb;
+}
+p {
+    margin: 0.33rem 0.18rem;
+}
+ul {
+    margin: 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid #ccc;
+    padding: 0.2rem 0.4rem;
+}
+tr > td:first-of-type {
+    vertical-align: middle;
+    font-weight: bold;
+    text-align: right;
+}
+tr > td:last-of-type {
+    vertical-align: top;
+    width: 100%;
+}
+td.description {
+    color: #858585;
+    font-size: 13.6333px;
+    margin-bottom: 4px;
+    margin-top: -2px;
+    text-shadow: #fefffe 0px 1px 1px;
+}
+td.value input[type=text] {
+    width: 100%;
+}
+#status {
+    font-weight: bold;
+    font-size: small;
+    color: red;
+}

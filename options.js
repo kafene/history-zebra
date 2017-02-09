@@ -4,23 +4,28 @@
 "use strict";
 
 const $ = document.getElementById.bind(document);
-const logError = (err) => { console.exception(err); };
+const logError = console.exception.bind(console);
 
 const saveOptions = () => {
-    const whitelist = $("whitelist").value.split(/\s*,\s*/).filter(v => !!v);
-    $("whitelist").value = whitelist.join(", ") + ", ";
+    const domains = $("domains").value.split(/\s*,\s*/).filter(v => !!v);
+    $("domains").value = domains.join(", ");
 
-    browser.storage.local.set({ whitelist }).then(() => {
-        $("status").textContent = "Whitelist saved!";
+    const mode = $("mode").value;
+
+    browser.storage.local.set({ domains, mode }).then(() => {
+        console.info("Settings saved", { domains, mode });
+        $("status").textContent = "Settings saved!";
         setTimeout(() => { $("status").textContent = ""; }, 750);
     }).catch(logError);
 };
 
 const restoreOptions = () => {
-    browser.storage.local.get({ whitelist: "" }).then(({ whitelist }) => {
-        document.getElementById("whitelist").value = whitelist.join(", ") + ", ";
+    browser.storage.local.get({ domains: [], mode: "whitelist" }).then(({ domains, mode }) => {
+        $("domains").value = domains.filter(v => !!v).join(", ");
+        $("mode").value = mode;
     }).catch(logError);
 };
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
-document.getElementById("save").addEventListener("click", saveOptions);
+
+$("save").addEventListener("click", saveOptions);

@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>History Whitelist options</title>
-<style>
-    * {
-        box-sizing: border-box !important;
-    }
-    html, body {
-        font-family: sans-serif;
-    }
-    #whitelist {
-        width: 100%;
-    }
-    #save {
-        padding: 0.5em;
-    }
-    #status {
-        font-weight: bold;
-        font-size: small;
-        color: red;
-    }
-</style>
+    <meta charset="utf-8">
+    <title>History Whitelist options</title>
+    <link rel="stylesheet" type="text/css" href="options.css">
 </head>
 <body>
-    <p>Insert a comma separated list of domains to be kept when history is cleared. All subdomains will be included, so "google.com" will include "mail.google.com" and "www.google.com", but "mail.yahoo.com" will include "us.mail.yahoo.com" but not "yahoo.com".</p>
-    <p>If you have a very large history, this can take a long time to complete. You will receive a notification when it is done showing the number of removed and retained history URLs.</p>
-    <p><input type="text" id="whitelist"></p>
-    <p><button id="save">Save</button> &nbsp; <span id="status"></span></p>
-    <script src="options.js"></script>
+    <table>
+        <tr>
+            <td class="label"><label for="domains">Domains:</label></td>
+            <td class="value"><input type="text" id="domains" placeholder="Example: mozilla.org, google.com, mail.yahoo.com, github.com"></td>
+        </tr>
+        <tr>
+            <td class="label">&nbsp;</td>
+            <td class="value description"><p>Insert a comma separated list of domains.</p>
+                <p>All subdomains will be included:
+                    <ul>
+                        <li><code>google.com</code> will include <code>mail.google.com</code> and <code>www.google.com</code>.</li>
+                        <li><code>mail.yahoo.com</code> will include <code>us.mail.yahoo.com</code> but not <code>yahoo.com</code>.</li>
+                    </ul>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="mode">Mode:</label></td>
+            <td class="value">
+                <select class="dropmarker" id="mode">
+                    <option value="whitelist" selected>Whitelist</option>
+                    <option value="blacklist">Blacklist</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">&nbsp;</td>
+            <td class="value description"><p>In <strong>whitelist</strong> mode, only these domains will be allowed in your browser history.<br>In <strong>blacklist</strong> mode, they are the ones which will be forbidden.<br>In both modes, if no domains are specified, all browser history will be kept.</p></td>
+        </tr>
+        <tr>
+            <td class="label">&nbsp;</td>
+            <td class="value"><button id="save">Save</button> &nbsp; <span id="status"></span></td>
+        </tr>
+    </table>
+    <script type="text/javascript" src="options.js"></script>
 </body>
 </html>

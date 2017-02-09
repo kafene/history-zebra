@@ -1,11 +1,5 @@
 # History Whitelist
 
-Provides a browser action to delete history, with a whitelist.
+Given a list of domains, treats them as a whitelist or a blacklist for the browser history.
 
 <https://addons.mozilla.org/en-US/firefox/addon/history-whitelist/>
-
----
-
-[History clock button](http://www.flaticon.com/free-icon/history-clock-button_61122) was made by [Google](http://www.flaticon.com/authors/google) and is licensed [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).
-
----
