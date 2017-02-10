@@ -38,7 +38,7 @@ const generateDomainsPattern = (domains) => {
         gDomainsPattern = new RegExp(`(?:^|\\.)(?:${domainsList})$`, "i");
     }
 
-    console.info("generated domains pattern", gDomainsPattern);
+    console.info(`generated domains pattern: ${gDomainsPattern}`);
 };
 
 const setMode = (mode) => {
