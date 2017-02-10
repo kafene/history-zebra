@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     font-family: sans-serif;
     font: message-box;
@@ -29,23 +30,9 @@ input[type=text] {
     font-size: 15px;
 }
 
-select {
-    -moz-appearance: none;
-    background: #fbfbfb url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAAB3RSTlMAvL6/wMHC5K4CPAAAAB9JREFUeAFjoB9gYQcDZjQRZmQ1rOzsTKi62BgZ6AkAQUMAcSstUuMAAAAASUVORK5CYII=) no-repeat 96% center;
-    padding: 6px 4px;
-}
-
 button, select {
+    min-width: 95px;
     margin: 2px 4px;
-    line-height: 20px;
-    min-height: 30px;
-    min-width: 94.5px;
-    background-color: #fbfbfb;
-    border: 1px solid #c1c1c1;
-}
-
-button:hover, select:hover {
-    background-color: #ebebeb;
 }
 
 p {
@@ -66,26 +53,14 @@ td {
     padding: 0.2rem 0.4rem;
 }
 
-tr > td:first-of-type {
+td.label {
+    text-align: right;
     vertical-align: middle;
     font-weight: bold;
-    text-align: right;
-}
-
-tr > td:last-of-type {
-    vertical-align: top;
-    width: 100%;
-}
-
-td.description {
-    color: #858585;
-    font-size: 13.6333px;
-    margin-bottom: 4px;
-    margin-top: -2px;
-    text-shadow: #fefffe 0px 1px 1px;
 }
 
 td.value input[type=text] {
+    vertical-align: top;
     width: 100%;
 }
 
@@ -93,4 +68,9 @@ td.value input[type=text] {
     font-weight: bold;
     font-size: small;
     color: red;
+}
+
+#save {
+    font-weight: bold;
+    line-height: 20px;
 }
