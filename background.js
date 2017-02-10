@@ -27,7 +27,7 @@ const getUrlDomain = (url) => {
     return a.hostname;
 };
 
-// Create one big regex to match any whitelisted domain, or subdomain of that domain.
+// Create one big regex to match any domain, or subdomain of that domain.
 const generateDomainsPattern = (domains) => {
     let domainsList = Array.isArray(domains) ? domains : [];
 
@@ -38,13 +38,13 @@ const generateDomainsPattern = (domains) => {
         gDomainsPattern = new RegExp(`(?:^|\\.)(?:${domainsList})$`, "i");
     }
 
-    console.info(`{history-whitelist}: generated domains pattern "${gDomainsPattern}"`);
+    console.info("generated domains pattern", gDomainsPattern);
 };
 
 const setMode = (mode) => {
     gMode = MODE[mode] || MODE.default;
 
-    console.info(`{history-whitelist}: set mode "${mode}"`);
+    console.info("set mode", mode);
 };
 
 // Update the domains pattern and mode every time their settings are changed.
