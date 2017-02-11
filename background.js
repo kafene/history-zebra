@@ -98,10 +98,10 @@ browser.history.onVisited.addListener(({ url=null }) => {
     }
 
     if (keep) {
-        console.info(`{history-whitelist}: keeping ${url}`);
+        console.info(`{history-zebra}: keeping ${url}`);
     } else {
         browser.history.deleteUrl({ url: url }).then(() => {
-            console.info(`{history-whitelist}: removed ${url}`);
+            console.info(`{history-zebra}: removed ${url}`);
         }).catch(logError);
     }
 });
