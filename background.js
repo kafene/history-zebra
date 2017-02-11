@@ -59,7 +59,7 @@ browser.storage.onChanged.addListener(changes => {
 
 // Startup: fetch the domains and mode settings.
 browser.storage.local.get({ domains: [], mode: MODE.default }).then(({ domains, mode }) => {
-    generateDomainsPattern();
+    generateDomainsPattern(domains);
     setMode(mode);
 }).catch(logError);
 
