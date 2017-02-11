@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "History Zebra",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cleans your history by removing visits from a list of domains you provide as either a whitelist or a blacklist.",
   "homepage_url": "https://github.com/kafene/history-zebra",
   "applications": {
