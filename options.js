@@ -6,24 +6,30 @@
 const $ = document.getElementById.bind(document);
 const logError = console.exception.bind(console);
 
-const saveOptions = () => {
+const saveOptions = async () => {
     const domains = $("domains").value.split(/\s*,\s*/).filter(v => !!v);
     $("domains").value = domains.join(", ");
 
     const mode = $("mode").value;
 
-    browser.storage.local.set({ domains, mode }).then(() => {
+    try {
+        await browser.storage.local.set({ domains, mode });
         console.info("Settings saved", { domains, mode });
         $("status").textContent = "Settings saved!";
         setTimeout(() => { $("status").textContent = ""; }, 750);
-    }).catch(logError);
+    } catch (e) {
+        logError(e);
+    }
 };
 
-const restoreOptions = () => {
-    browser.storage.local.get({ domains: [], mode: "whitelist" }).then(({ domains, mode }) => {
+const restoreOptions = async () => {
+    try {
+        const { domains, mode } = await browser.storage.local.get({ domains: [], mode: "whitelist" });
         $("domains").value = domains.filter(v => !!v).join(", ");
         $("mode").value = mode;
-    }).catch(logError);
+    } catch (e) {
+        logError(e);
+    }
 };
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
