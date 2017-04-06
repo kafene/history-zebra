@@ -58,10 +58,13 @@ browser.storage.onChanged.addListener(changes => {
 });
 
 // Startup: fetch the domains and mode settings.
-browser.storage.local.get({ domains: [], mode: MODE.default }).then(({ domains, mode }) => {
-    generateDomainsPattern(domains);
-    setMode(mode);
-}).catch(logError);
+browser.storage.local.get({ syncSettings: true }).then(({ syncSettings }) => {
+    const storage = browser.storage[syncSettings ? "sync" : "local"];
+    storage.get({ domains: [], mode: MODE.default }).then(({ domains, mode }) => {
+        generateDomainsPattern(domains);
+        setMode(mode);
+    }).catch(logError);
+});
 
 // Startup: listen for every time something is added to the history.
 browser.history.onVisited.addListener(({ url=null }) => {
