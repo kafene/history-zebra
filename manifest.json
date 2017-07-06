@@ -6,7 +6,8 @@
   "homepage_url": "https://github.com/kafene/history-zebra",
   "applications": {
     "gecko": {
-      "id": "history-whitelist@kafene.org"
+      "id": "history-whitelist@kafene.org",
+      "strict_min_version": "50.0"
     }
   },
   "options_ui": {
