@@ -88,7 +88,7 @@ browser.history.onVisited.addListener(({ url=null }) => {
     if (gDomainsPattern !== NO_DOMAINS) {
         switch (gMode) {
             case MODE.blacklist:
-                keep = !gDomainsPattern.test(domain);
+                keep = !(gDomainsPattern.test(domain) || gDomainsPattern.test(btoa(domain)));
                 break;
             case MODE.whitelist:
             default:
